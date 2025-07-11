@@ -7,9 +7,6 @@
     --hoh: 48;
     padding: 0;
     margin: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
 }
 body{
     font-family: cursive;
@@ -48,7 +45,7 @@ a{
     display: inline-flex;
 }
 .nav > li{
-    display: inline-flex;
+    display: inline-block;
 }
 .nav > li > a{
     height: 100%;
