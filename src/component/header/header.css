@@ -1,0 +1,62 @@
+.header{
+    min-height: calc(var(--hoh) * 1px);
+    position: fixed;
+    top: 0; 
+    width: 100%;
+    height: calc(var(--hoh) * 1px);
+    background: linear-gradient(90deg, red, rgb(180, 7, 207), red);
+    background-size: 300%;
+    animation: flow 8s linear infinite;
+}
+@keyframes flow{
+    from{
+        background-position: 0%;
+    }
+    to{
+        background-position: 300%;
+    }
+}
+
+.navBar {
+    display: inline-flex;
+}
+
+.navBar > li{
+    display: inline-block;
+}
+
+.navBar > li > a{
+    height: 100%;
+    padding: 8px;
+}
+
+.navBar .more{
+    background-color: brown;
+    position: absolute;
+}
+
+.navBar .more::before{
+    content: '';
+    border-bottom: 8px solid rgb(42, 151, 165);
+    border-left: 8px solid rgba(0,0,0,0);
+    border-right: 8px solid rgba(0,0,0,0);
+    position: absolute;
+    transform: translateY(-100%);
+}
+
+.navBar .more li {
+    display: block;
+}
+
+.navBar .more li a{
+    height: 100%;
+    padding: 8px;
+}
+
+.navBar > li:hover > .more{
+    display: block;
+}
+
+.navBar .more {
+    display: none;
+}

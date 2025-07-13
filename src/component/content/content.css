@@ -1,0 +1,54 @@
+.content{
+    padding-top: calc(var(--hoh) * 1px);
+    height: 1000px;
+}
+
+.product{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.card{
+    display: inline-flex;
+    flex-wrap: wrap;
+    min-width: 300px;
+    max-width: 300px;
+    height: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 8px;
+    padding: 8px;
+    border: 2px solid cyan;
+    border-radius: 8px;
+}
+
+
+.card .frameImage{
+    width: 100%;
+    height: auto;
+}
+.card .itemName{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid cyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .itemValue{
+    display: grid;
+    justify-items: center;
+    width: 100%;
+    height: auto;
+    margin: 8px;
+    
+}
+
+.card img{
+    width: 100%;
+    height: auto;
+}
