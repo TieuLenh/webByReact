@@ -1,5 +1,7 @@
 import './header.css';
 import {arrFromTo} from '../extension';
+import homeLogo from '../../assets/homeLogo.png'
+
 
 const Form  = {
     Input({id = 'id', name = 'input'}) {
@@ -15,12 +17,27 @@ const Form  = {
     }
 }
 
+const Home = () => {
+    return(
+        <a 
+            className='home'
+            href='#'
+        >
+            <img 
+                className='logo'
+                src={homeLogo}
+            /> 
+        </a>
+        
+    )
+}
+
 const navs = [
-    {
-        link: '#',
-        name: 'Home',
-        title: 'Home',
-    },
+    // {
+    //     link: '#',
+    //     name: 'Home',
+    //     title: 'Home',
+    // },
     {
         link: '#',
         name: 'Store',
@@ -40,7 +57,7 @@ const navs = [
         link: '#',
         name: 'Contact',
         title: 'Contact',
-    },
+    },  
     {
         link: '#',
         name: 'Help',
@@ -50,26 +67,27 @@ const navs = [
 ]
 
 const NavBar = ({navs}) => {
-    var n = 3;
+    var n = 2;
     var len = navs.length;
 
     var subNav1 = arrFromTo(navs, 0, n);
-    var subNav2 = arrFromTo(navs, 3, len)
+    var subNav2 = arrFromTo(navs, n, len)
     return (
         <ul 
             className="navBar"
         >
+            <Home />
             {subNav1.map( (nav, i) => 
-                <li key={i} title={nav.title}>
+                <li key={i}>
                     <a href={nav.link}>{nav.name}</a>
                 </li>
                 )
             }
-            <li title='more'>
+            <li>
                 <a href='#'>More</a>
                 <ul className='more'>
                     {subNav2.map( (nav, i) => 
-                        <li key={i} title={nav.title}>
+                        <li key={n + i}>
                             <a href={nav.link}>{nav.name}</a>
                         </li>
                         )
@@ -81,17 +99,37 @@ const NavBar = ({navs}) => {
     )
 }
 
-const Header = () => 
-{
-    
+const SearchBox = () => {
     return (
-        <div className="header">
-            <NavBar navs={navs}/>
+        <div className='searchBox'>
+            <input 
+                type='text'
+                placeholder='search'
+            />
         </div>
     )
 }
 
+const Account = () => {
+    return (
+        <div className='account'>
+            <div className='avatar'>
+                <img src="https://randomuser.me/api/portraits/men/75.jpg" />
+            </div>
+        </div>
+    )
+}
 
+const Header = () => 
+{
+    return (
+        <div className="header">
+            <NavBar navs={navs}/>
+            <SearchBox />
+            <Account />
+        </div>
+    )
+}
 
 export default Header;
 

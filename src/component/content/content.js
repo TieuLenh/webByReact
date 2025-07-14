@@ -20,6 +20,7 @@ var cards = [
         value: 110, 
     },
 ]
+
 const Card = ({cardObj}) => {
     const handelClick = () =>{
         console.log(` Da click vao: ${cardObj.name}`);
@@ -27,9 +28,8 @@ const Card = ({cardObj}) => {
     const checkLink = () => (typeof cardObj.link === 'string' ? (cardObj.link.includes("https")?'_blank': '_self'):'_self') 
         
     return (
-        <a 
-            href={cardObj.link ||"#"} 
-            target={checkLink()} 
+        <div 
+            
             className="card"
             onClick={handelClick}
         >
@@ -51,7 +51,13 @@ const Card = ({cardObj}) => {
             >
                 {cardObj.description}
             </div> 
-        </a>
+            <a
+                href={cardObj.link ||"#"} 
+                target={checkLink()} 
+            >
+                click here
+            </a>
+        </div>
     )
 }
 
