@@ -1,0 +1,103 @@
+.rightBar {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    min-width: 300px;
+    width: 40%;
+}
+
+/* home css */
+.home{
+    display: inline-flex;
+    height: calc(var(--header-height) * 1px);
+    width: auto;
+    overflow: hidden;
+}
+.home .logo{
+    height: 100%;
+    width: auto;
+    padding: 0 8px;
+}
+.home .logo:hover{
+    color: var(--color-foreign2);
+}
+
+/* nav bar css */
+.navBar {
+    display: inline-flex;
+    margin-left: 12px;
+}
+
+.navBar > li{
+    display: inline-block;
+    margin: 0 4px;
+}
+
+.navBar > li > a{
+    height: 100%;
+    padding: 4px;
+    line-height: calc(var(--header-height) * 1px);
+    border-radius: 8px;
+    color: var(--color-dark);
+}
+
+.navBar > li:hover > a{
+    outline: 2px var(--color-foreign2) solid;
+}
+
+/* more nav bar  css */
+.navBar .more{
+    position: absolute;
+    display: none;
+
+    background-color: var(--color-dark1);
+
+    min-width: 100px;
+    width: auto;
+    height: auto;
+
+    padding: 8px 0;
+
+    background-color: var(--color-light);
+    border-radius: 8px;
+    border: 2px var(--color-foreign2) solid;
+}
+
+.navBar .more::before{
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 20px;
+    transform: translate( 0,-8px);
+
+    border-bottom: 8px solid var(--color-foreign2);
+    border-left: 8px solid rgba(0,0,0,0);
+    border-right: 8px solid rgba(0,0,0,0);
+     
+}
+
+.navBar .more li {
+    display: block;
+    height: calc(var(--bar-height) * 1px);
+    width: 100%;
+}
+
+.navBar .more li a{
+    height: 100%;
+    width: 100%;
+    padding: 8px;
+    line-height: calc(var(--bar-height) * 1px);
+    color: var(--color-dark);
+}
+
+.navBar > li:hover > .more{
+    display: block;
+}
+
+.navBar .more li:hover{
+    background-color: var(--color-foreign2);
+}
+.navBar .more li:hover a{
+    color: var(--color-light);
+}
