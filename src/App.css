@@ -3,12 +3,14 @@
     --bar-height: 32;
     --unit: 4;
     --min-w: 600px;
-    --color-primary: #2d2929;
+
     --color-dark: #000;
-    --color-dark1: #aaa;
     --color-light: #fff;
-    --color-foreign1: #169976;
-    --color-foreign2: #1DCD9F;
+    --color-p1: #169976;
+    --color-bg: whitesmoke;
+    --color-f2:  #aaa;
+    --color-f3: #2d2929;
+    --no-color: rgba(0,0,0,0)
 }
 
 *{
@@ -33,4 +35,8 @@ li{
 a{
     text-decoration: none;
     color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  
 }

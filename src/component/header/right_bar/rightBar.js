@@ -33,16 +33,16 @@ const Account = () => {
                 <FaRegMessage className='mess' />
             </button>
 
-            <div className='avatar'>
+            <button className='avatar'>
                 <img src="https://randomuser.me/api/portraits/men/75.jpg" />
-            </div>
+            </button>
         </div>
     )
 }
 
 const RightBar = () => {
     return (
-        <div className='leftBar'>
+        <div className='rightBar'>
             <SearchBox />
             <Account />
         </div>

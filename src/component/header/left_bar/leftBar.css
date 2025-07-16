@@ -1,11 +1,11 @@
 .leftBar {
     display: inline-flex;
     align-items: center;
-    justify-content: end;
+    justify-content: start;
 
     height: 100%;
-    min-width: 200px;
-    width: 60%;
+    min-width: 300px;
+    width: 40%;
 }
 
 /* home css */
@@ -19,10 +19,9 @@
     height: 100%;
     width: auto;
     padding: 0 8px;
+    color: var(--color-p1);
 }
-.home .logo:hover{
-    color: var(--color-foreign2);
-}
+
 
 /* nav bar css */
 .navBar {
@@ -44,15 +43,13 @@
 }
 
 .navBar > li:hover > a{
-    outline: 2px var(--color-foreign2) solid;
+    outline: 2px var(--color-p1) solid;
 }
 
 /* more nav bar  css */
 .navBar .more{
     position: absolute;
     display: none;
-
-    background-color: var(--color-dark1);
 
     min-width: 100px;
     width: auto;
@@ -61,8 +58,9 @@
     padding: 8px 0;
 
     background-color: var(--color-light);
+
     border-radius: 8px;
-    border: 2px var(--color-foreign2) solid;
+    border: 2px var(--color-p1) solid;
 }
 
 .navBar .more::before{
@@ -73,7 +71,7 @@
     left: 20px;
     transform: translate( 0, calc(var(--unit) * -3px));
 
-    border-bottom: calc(var(--unit) * 3px) solid var(--color-foreign2);
+    border-bottom: calc(var(--unit) * 3px) solid var(--color-p1);
     border-left: 10px solid rgba(0,0,0,0);
     border-right: 10px solid rgba(0,0,0,0);
      
@@ -98,7 +96,7 @@
 }
 
 .navBar .more li:hover{
-    background-color: var(--color-foreign2);
+    background-color: var(--color-p1);
 }
 .navBar .more li:hover a{
     color: var(--color-light);

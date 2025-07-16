@@ -7,6 +7,6 @@
     height: 200px;
     margin: 8px;
 
-    border-radius: 8px;
-    border: 2px var(--color-dark1) solid;
+    border-top: 2px var(--color-dark) solid;
+    border-bottom: 2px var(--color-dark) solid;
 }

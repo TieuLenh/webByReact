@@ -6,12 +6,13 @@
     align-items: center;
     justify-content: space-between;
 
+    min-width: var(--min-w);
     width: 100%;
     min-height: calc(var(--header-height) * 1px);
     height: calc(var(--header-height) * 1px);
 
-    background-color: var(--color-light);
-    border-bottom: 2px solid var(--color-foreign2);
+    background-color: var(--color-bg);
+    border-bottom: 2px solid var(--color-p1);
     font-family: 'consolas','Lucida Console', 'Verdana', 'Tahoma', sans-serif;
-
+    
 }

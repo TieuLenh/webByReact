@@ -80,7 +80,7 @@ const NavBar = ({navs}) => {
 // total right bar
 const LeftBar = () => {
     return (
-        <div className='rightBar'>
+        <div className='leftBar'>
             <Home />
             <NavBar navs={navs}/>
         </div>
