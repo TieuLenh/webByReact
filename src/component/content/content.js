@@ -1,5 +1,5 @@
 import './content.css'
-
+import Slider from './slider/slider'
 var cards = [
     {
         link: '#', //'https://youtu.be/cJOkT28U4V4?si=N43i6bDHZMFr0OlN',
@@ -73,6 +73,7 @@ const Product = ({cards}) => {
 const Content = () => {
     return (
         <div className="content">
+            <Slider />
             <Product cards={cards}/>
             {/* {cards.reduce((a, card) => a + card.value, 0)} */}
         </div>

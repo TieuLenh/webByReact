@@ -4,109 +4,102 @@
     justify-content: end;
 
     height: 100%;
-    min-width: 100;
+    min-width: 200px;
     width: 60%;
 }
 
-/* searchBox */
-.searchBox{
+/* home css */
+.home{
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    height: 100%;
-    width: 50%;
-    margin: 0 8px;
-}
-
-.searchBox input{
-
-    height: calc(var(--bar-height) * 1px);
-    width: calc(100% - var(--header-height) * 1px);
-    
-    padding: 8px;
-
-    border-radius: 8px 0 0 8px;
-    border: 2px var(--color-dark1) solid;
-    outline: none;
-}
-
-.searchBox .btn{
-    height: calc(var(--bar-height) * 1px);
-    aspect-ratio: 1;
-
-    border-radius: 0 8px 8px 0;
-    border: 2px var(--color-dark1) solid;
-    border-left: 0;
-
-    outline: none;
-}
-
-.searchBox .searchIcon{
-    width: 100%;
-    height: auto;
-    scale: 0.6;
-    color: var(--color-dark1);
-}
-.searchBox .btn:hover .searchIcon{
-    scale: 0.8;
-    color: var(--color-foreign2);
-}
-
-.searchBox input:focus{
-    border: 2px var(--color-foreign2) solid;
-}
-.searchBox input:focus ~ .btn{
-    border: 2px var(--color-foreign2) solid;
-    border-left: 0;
-}
-
-
-/* account */
-.account{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 100%;
-    width: 120px;
-}
-.account .avatar {
-    display: flex;
-    align-items: center;
-
-    height: 32px;
-    aspect-ratio: 1;
-
-    border-radius: 50%;
-    border: 2px var(--color-dark1) solid;
+    height: calc(var(--header-height) * 1px);
+    width: auto;
     overflow: hidden;
 }
-
-.account .avatar:hover {
-    border-color: var(--color-foreign2);
-}
-
-.avatar img{
+.home .logo{
     height: 100%;
     width: auto;
+    padding: 0 8px;
 }
-
-.account .mess:hover{
+.home .logo:hover{
     color: var(--color-foreign2);
 }
 
-/* total keyframes */
+/* nav bar css */
+.navBar {
+    display: inline-flex;
+    margin-left: 12px;
+}
 
-/* total media  */
-@media (max-width: 600px) {
-  .searchBox input{
-    display: none;
-  }
-  .searchBox .btn{
-    border: 2px var(--color-dark1) solid;
+.navBar > li{
+    display: inline-block;
+    margin: 0 4px;
+}
+
+.navBar > li > a{
+    height: 100%;
+    padding: 4px;
+    line-height: calc(var(--header-height) * 1px);
     border-radius: 8px;
-  }
-  .searchBox {
+    color: var(--color-dark);
+}
+
+.navBar > li:hover > a{
+    outline: 2px var(--color-foreign2) solid;
+}
+
+/* more nav bar  css */
+.navBar .more{
+    position: absolute;
+    display: none;
+
+    background-color: var(--color-dark1);
+
+    min-width: 100px;
     width: auto;
-  }
+    height: auto;
+
+    padding: 8px 0;
+
+    background-color: var(--color-light);
+    border-radius: 8px;
+    border: 2px var(--color-foreign2) solid;
+}
+
+.navBar .more::before{
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 20px;
+    transform: translate( 0, calc(var(--unit) * -3px));
+
+    border-bottom: calc(var(--unit) * 3px) solid var(--color-foreign2);
+    border-left: 10px solid rgba(0,0,0,0);
+    border-right: 10px solid rgba(0,0,0,0);
+     
+}
+
+.navBar .more li {
+    display: block;
+    height: calc(var(--bar-height) * 1px);
+    width: 100%;
+}
+
+.navBar .more li a{
+    height: 100%;
+    width: 100%;
+    padding: 8px;
+    line-height: calc(var(--bar-height) * 1px);
+    color: var(--color-dark);
+}
+
+.navBar > li:hover > .more{
+    display: block;
+}
+
+.navBar .more li:hover{
+    background-color: var(--color-foreign2);
+}
+.navBar .more li:hover a{
+    color: var(--color-light);
 }

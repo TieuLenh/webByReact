@@ -24,8 +24,8 @@ const Header = () =>
 {
     return (
         <div className="header">
-            <RightBar />
             <LeftBar />
+            <RightBar />
         </div>
     )
 }

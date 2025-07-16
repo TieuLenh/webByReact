@@ -1,7 +1,8 @@
 :root{
     --header-height: 56;
     --bar-height: 32;
-    --unit: 8px;
+    --unit: 4;
+    --min-w: 600px;
     --color-primary: #2d2929;
     --color-dark: #000;
     --color-dark1: #aaa;
