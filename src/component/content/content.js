@@ -1,70 +1,78 @@
 import './content.css'
 import Slider from './slider/slider'
+import { useState } from 'react'
+
 var cards = [
     {
-        link: '#', //'https://youtu.be/cJOkT28U4V4?si=N43i6bDHZMFr0OlN',
         image: "https://i.ytimg.com/vi/cJOkT28U4V4/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCpnUQTmQOa4zgKz7BWgmPEIPulSQ", 
         name: 'obj1', 
-        value: 0, 
+        price: 10,
+        quantity: 1,
     },
     { 
-        link: 'https://youtu.be/WCazPUimdGc?si=ImCam5ZuRAuBEd7H',
         image: "https://i.ytimg.com/vi/WCazPUimdGc/hqdefault.jpg?sqp=-oaymwEmCKgBEF5IWvKriqkDGQgBFQAAiEIYAdgBAeIBCggYEAIYBjgBQAE=&rs=AOn4CLBWdDcorGZzP48dhWdEgUpiqLBIAg", 
         name: 'obj2', 
-        value: 5, 
+        price: 5,
+        quantity: 1,
     },
     { 
-        link: null,
         image: "https://i.ytimg.com/vi/isMS4918XqY/hqdefault.jpg?sqp=-oaymwEmCKgBEF5IWvKriqkDGQgBFQAAiEIYAdgBAeIBCggYEAIYBjgBQAE=&rs=AOn4CLARDUg84wa6u8AEAmemdIUeSp8GDw", 
         name: 'obj3', 
-        value: 110, 
+        price: 110,
+        quantity: 1,
     },
 ]
 
-const Card = ({cardObj}) => {
-    const handelClick = () =>{
-        console.log(` Da click vao: ${cardObj.name}`);
-    }
-    const checkLink = () => (typeof cardObj.link === 'string' ? (cardObj.link.includes("https")?'_blank': '_self'):'_self') 
-        
+// const CountNumber = (obj) => {
+//     const [counter, setCounter] = useState(obj.quantity)
+//     const increase = () => {
+//         setCounter(prev => {
+//                 return prev + 1
+//             }
+//         );
+//     }
+//     const decrease = () => {
+//         if(counter - 1 > 0) setCounter(counter - 1);
+//     }
+//     obj.quantity = counter;
+//     return (
+//         <div>
+//             <button onClick={decrease} > - </button>
+//             <span>{obj.quantity}</span>
+//             <button onClick={increase} > + </button>
+//         </div>
+//     );
+// }
+
+const Card = ({card = {image: null, name: null, price:0, quantity: 0,}} ) => {  
+    const handelClick = () => {
+        return(
+            console.log('Da click vao:', card.name)
+        )
+    } 
     return (
         <div 
-            
             className="card"
-            onClick={handelClick}
         >
             <div className='frameImage'>
-                <img src={cardObj.image} title={`Day la hinh ${cardObj.name}`}/>
+                <img src={card.image} title={`Day la hinh ${card.name}`}/>
             </div>
-            <div 
+            <button 
                 className="itemName"
+                onClick={handelClick}
             >
-                {cardObj.name}
-            </div> 
-            <div 
-                className="itemValue"
-            >
-                {cardObj.value}
-            </div> 
-            <div 
-                className="description"
-            >
-                {cardObj.description}
-            </div> 
-            <a
-                href={cardObj.link ||"#"} 
-                target={checkLink()} 
-            >
-                click here
-            </a>
+                {card.name}: {card.price}
+            </button> 
+            
         </div>
     )
 }
 
-const Product = ({cards}) => {
+const Product = ({list = []}) => {
+    console.log(list)
     return (
         <div className='product'>
-            {cards.map((obj, index) => (<Card key={index} cardObj={obj} />))}
+            {list.map((obj, index) => (<Card key={index} card={obj} />))}
         </div>
     )
     
@@ -74,8 +82,8 @@ const Content = () => {
     return (
         <div className="content">
             <Slider />
-            <Product cards={cards}/>
-            {/* {cards.reduce((a, card) => a + card.value, 0)} */}
+            <Product list={cards}/>
+            {/* {cards.reduce((a, card) => a + card.price, 0)} */}
         </div>
     )
 }
