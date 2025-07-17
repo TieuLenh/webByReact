@@ -67,7 +67,6 @@ const Card = ({card = {image: null, name: null, price:0, quantity: 0,}} ) => {
 }
 
 const Product = ({list = []}) => {
-    console.log(list)
     return (
         <div className='product'>
             {list.map((obj, index) => (<Card key={index} card={obj} />))}
