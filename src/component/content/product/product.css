@@ -8,28 +8,42 @@
 
 .card{
     display: inline-flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+
     min-width: 300px;
-    max-width: 300px;
-    height: 400px;
-    border-radius: 8px;
-    overflow: hidden;
+    width: auto;
+    height: 160px;
+
     margin: 8px;
     padding: 8px;
-    border: 2px solid var(--color-dark1);
+
     border-radius: 8px;
+    border: 2px solid var(--color-p1);
+    border-radius: 12px;
+    /* overflow: hidden; */
 }
+
 
 
 .card .frameImage{
-    width: 100%;
-    height: auto;
+
+    height: 100%;
+    aspect-ratio: 1.8;
+    border: 2px var(--color-p1) solid;
+    border-radius: 8px;
+
+    overflow: hidden;
 }
+
+.frameImage img{
+    
+}
+
 .card .itemName{
     width: 100%;
     height: auto;
     border-radius: 8px;
-    border: 2px solid var(--color-dark1);
+    border: 2px solid var(--color-p1);
     display: flex;
     justify-content: center;
     align-items: center;

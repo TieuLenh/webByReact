@@ -105,8 +105,24 @@
 .avatar img{
     height: 100%;
     width: auto;
+    user-select: none;
 }
 
+.sidebar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    width: 200px;
+    height: 360px;
+
+    background-color: var(--color-bg);
+
+    border: 2px var(--color-p1) solid;
+    border-radius: 8px;
+
+    user-select: none; /*không thể bôi đen*/
+}
 
 
 

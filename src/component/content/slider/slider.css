@@ -7,6 +7,5 @@
     height: 200px;
     margin: 8px;
 
-    border-top: 2px var(--color-dark) solid;
     border-bottom: 2px var(--color-dark) solid;
 }
