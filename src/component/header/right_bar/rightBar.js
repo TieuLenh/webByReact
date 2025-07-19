@@ -5,16 +5,12 @@ import { useState } from 'react';
 
 // left bar
 const SearchBox = () => {
-    const handel = (e) => {
-        if(e.which === 13) console.log(e.target.value)
-    }
     return (
         <div className='searchBox'>
             <input 
                 type='text'
                 placeholder='search'
                 id='search'
-                onKeyDown={handel}
             />
             <button 
                 className='btn'
@@ -31,13 +27,27 @@ const Account = () => {
     const handleSildebar = () => {
         setDisplay(prev => !prev)
     }
+
+    const [chat, setChat] = useState()
+    const change = (e) => {
+        setChat(e.target.value)
+    }
+
+    const [chatList, setchatList] = useState([])
+    const submit = (e) => {
+        setchatList(prev => {
+            var result = [...prev, chat];
+            return result
+        })
+        setChat('')
+    }
     return (
         <div className='account'>
             <button 
                 className='btn b1'
                 onClick={handleSildebar}
             >
-                <FaRegMessage className='mess' />
+                <FaRegMessage className='chat' />
             </button>
 
             <button 
@@ -50,7 +60,19 @@ const Account = () => {
                 className='sidebar'
                 style= {{display: display?'flex':'none'}}
             >
-                ok test
+                <div className='chatContent'>
+                    <div className='chatHeader'>
+                        <input
+                            onChange={change}
+                            value={chat}
+                        />
+                        <button onClick={submit}>submit</button>
+                    </div>
+                    <ul>
+                        {chatList.map( (val, index) => <li key={index}>{val}</li>)}
+                    </ul>
+                    
+                </div>
             </div>
         </div>
     )

@@ -81,11 +81,9 @@
 
     outline: none;
 }
-.account .btn .mess{
 
-}
 
-.account .btn:hover .mess{
+.account .btn:hover .chat{
     color: var(--color-p1);
     scale: 1.2;
 }
@@ -113,17 +111,48 @@
     top: 100%;
     right: 0;
 
-    width: 200px;
-    height: 360px;
+    width: 400px;
+    height: auto;
+    max-height: 360px;
 
     background-color: var(--color-bg);
 
     border: 2px var(--color-p1) solid;
     border-radius: 8px;
 
+    overflow-y: scroll;
+    scrollbar-width: none;
+
     user-select: none; /*không thể bôi đen*/
 }
 
+.chatContent{
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    background: var(--color-bg);
+}
+.chatContent .chatHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 100%;
+    height: calc(var(--bar-height) * 1px);
+
+    background: var(--color-bg);
+
+    border-bottom: 2px var(--color-p1) solid;
+}
+
+.chatContent li{
+    display: flex;
+    align-items: center;
+
+    height: 40px;
+
+    border-bottom: 2px var(--color-p1) solid;
+}
 
 
 /* total keyframes */
