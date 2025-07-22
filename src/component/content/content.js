@@ -11,7 +11,6 @@ const Content = () => {
         <div className="content">
             <Slider />
             <Product list={cards}/>
-            {/* {cards.reduce((a, card) => a + card.price, 0)} */}
         </div>
     )
 }
